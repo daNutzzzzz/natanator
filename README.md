@@ -25,7 +25,7 @@ Login to your UniFiOS device (e.g. UDM-pro) using ssh and perform the following 
 
 1. Download and install the `natanator.sh` script directly on your UniFiOS device via:
    ```sh
-   wget -O /usr/local/bin/natanator.sh https://raw.githubusercontent.com/jadedeane/natanator/main/natanator.sh
+   wget -qO /usr/local/bin/natanator.sh https://raw.githubusercontent.com/daNutzzzzz/natanator/main/natanator.sh
    chmod +x /usr/local/bin/natanator.sh
    ```
 
@@ -70,6 +70,6 @@ To check the correct operation of the natanator service you can execute the foll
 
 2. Check correct removal of the NAT/MASQUERADING firewall rules via:
    ```sh
-   iptables -t nat -L UBIOS_POSTROUTING_USER_HOOK | grep "MASQUERADE .* UBIOS_.*ADDRv4_eth."
+   iptables -t nat -L UBIOS_POSTROUTING_USER_HOOK | grep "MASQUERADE .* UBIOS_.*ADDRv4_ppp0."
    ```
    If correctly removed this command should NOT return any output
