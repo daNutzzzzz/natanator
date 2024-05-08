@@ -7,6 +7,7 @@ do
     # manage NAT throught WAN
     rules=$(/usr/sbin/iptables -t nat -L UBIOS_POSTROUTING_USER_HOOK --line-numbers | \
                 grep "MASQUERADE .* UBIOS_.*ADDRv4_ppp0. src" | \
+                # grep "MASQUERADE .* UBIOS_.*ADDRv4_eth. src" | \
                 cut -d' ' -f1)
 
     # for each rule identified we issue a delete operation in reverse
